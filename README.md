@@ -19,12 +19,18 @@
 O Jump Search é um algoritmo de busca utilizado em arrays ou listas ordenadas. Ele opera saltando blocos de elementos em vez de percorrer cada elemento individualmente.
 ## Como Funciona
 
-Explicar sobre o algoritmo
+-Salto Inicial: O algoritmo começa verificando elementos em saltos fixos de tamanho √n (onde n é o número de elementos na lista). Isso significa que ele pula de um elemento a outro, em vez de examinar cada um sequencialmente.
+
+-Busca Linear: Quando o algoritmo encontra um intervalo onde o elemento procurado pode estar (ou seja, onde o elemento no final do salto é maior ou igual ao valor procurado), ele realiza uma busca linear dentro desse intervalo para encontrar o elemento exato.
+
+-Eficiência: O Jump Search é mais eficiente do que a busca linear para listas grandes, pois reduz o número de comparações necessárias ao limitar a busca linear a blocos menores.
+
+![busca por pulo](https://harkishen-singh.github.io/jump-search-visualisation/this.gif)
 
 ## Implementação
 
 ```
- Inserir conforme atualizações
+ Inserir posteriormente.
 ```
 
 ## Como rodar na minha maquina?
@@ -45,22 +51,18 @@ gcc main.c -o main && ./main
 
 ### Pior Caso:
 
-após testes inserir
+O pior caso ocorre quando o elemento procurado está no final do array ou não está presente, obrigando o algoritmo a verificar todos os blocos e realizar uma busca linear completa no último bloco. Portanto, a complexidade para o pior caso é O(√n).
 
 ```
-Inserir complexidade
+c1 * 1 + c2 * 1 + c3 + n + c5 * n + c6 * n + c7 * n + c8 * n + c9 * 1 = O(√n)
 ```
-
-### Caso Médio:
-
-após testes inserir
 
 ### Melhor Caso:
 
-após testes inserir
+O melhor caso ocorre quando o elemento procurado está no início do array, e o algoritmo encontra o elemento imediatamente após o primeiro salto. Portanto, a complexidade para o melhor caso é O(1).
 
 ```
-Inserir complexidade
+c1 * 1 + c2 * 1 + c3 * 1 + c4 * 1 + c5 * 1 + c6 * 1 + c7 * 1 + c8 * 1 + c9 * 1 = O(1)
 ```
 
   <h2 id="config" style="font-weight: bold; font-size: 2rem">Configuração utilizada nos testes</h2>

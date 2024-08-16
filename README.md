@@ -91,7 +91,7 @@ Inserir complexidade
         <a href="#">
           <img src="https://avatars.githubusercontent.com/u/144806270?v=4" width="100px;" alt="Foto do Steve Jobs"/><br>
             <sub>
-              <a href="https://github.com/"><b>Alisson ricarte</b></a>
+              <a href="https://github.com/alissonricarte"><b>Alisson ricarte</b></a>
             </sub>
         </a>
       </td>

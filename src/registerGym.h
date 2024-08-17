@@ -7,4 +7,4 @@ typedef struct {
 } Aluno;
 
 // função para adicionar um aluno
-void adicionarAluno(Aluno alunos[], int* n, int id, char nome[]);
+void adicionarAluno(Aluno alunos[], int* numeroAlunos, int id, char nome[]);

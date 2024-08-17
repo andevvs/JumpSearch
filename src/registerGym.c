@@ -3,13 +3,13 @@
 #include <math.h>
 #include "registerGym.h"
 
-void adicionarAluno(Aluno alunos[], int* n, int id, char nome[]) {
-    if (*n >= MAX) {
+void adicionarAluno(Aluno alunos[], int* numeroAlunos, int id, char nome[]) {
+    if (*numeroAlunos >= MAX) {
         printf("Não é possível adicionar mais alunos.\n");
         return;
     }
-    alunos[*n].id = id;
-    strcpy(alunos[*n].nome, nome);
-    (*n)++;
+    alunos[*numeroAlunos].id = id;
+    strcpy(alunos[*numeroAlunos].nome, nome);
+    (*numeroAlunos)++;
     printf("Aluno adicionado com sucesso!\n");
 }

@@ -8,3 +8,6 @@ typedef struct {
 
 // função para adicionar um aluno
 void adicionarAluno(Aluno alunos[], int* numeroAlunos, int id, char nome[]);
+
+// função do algoritmo de busca por pulo (Jump Search) para buscar um aluno pelo seu id
+int jumpSearch(Aluno alunos[], int numeroAlunos, int id);

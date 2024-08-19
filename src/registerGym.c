@@ -4,7 +4,7 @@
 #include "registerGym.h"
 
 void adicionarAluno(Aluno alunos[], int* numeroAlunos, int id, char nome[]) {
-    if (*numeroAlunos >= MAX) {
+    if (*numeroAlunos >= MAXALUNO) {
         printf("Não é possível adicionar mais alunos.\n");
         return;
     }
@@ -33,4 +33,8 @@ int jumpSearch(Aluno alunos[], int numeroAlunos, int id) {
     }
 
     return -1; // Elemento não encontrado
+}
+
+void exibirAluno(Aluno aluno) {
+    printf("ID: %d\nNome: %s\n", aluno.id, aluno.nome);
 }

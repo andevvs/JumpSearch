@@ -1,4 +1,4 @@
-#define MAX 100 // constante para definir o tamanho maximo do array de alunos
+#define MAXALUNO 100 // constante para definir o tamanho maximo do array de alunos
 
 // struct para armazenar informações do aluno
 typedef struct {
@@ -11,3 +11,6 @@ void adicionarAluno(Aluno alunos[], int* numeroAlunos, int id, char nome[]);
 
 // função do algoritmo de busca por pulo (Jump Search) para buscar um aluno pelo seu id
 int jumpSearch(Aluno alunos[], int numeroAlunos, int id);
+
+// função pra exibir apenas um aluno
+void exibirAluno(Aluno aluno);

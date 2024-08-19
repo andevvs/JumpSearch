@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <time.h>
-#include "registerGym.c"
+#include "registerGymtime.c"
 
 int main() {
     Aluno alunos[MAXALUNO];

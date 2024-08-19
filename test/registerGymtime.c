@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-#include "registerGym.h"
+#include "registerGymtime.h"
 
 void adicionarAluno(Aluno alunos[], int* numeroAlunos, int id, char nome[]) {
     if (*numeroAlunos >= MAXALUNO) {

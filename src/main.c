@@ -8,7 +8,7 @@ int main() {
     int opcao;
 
     do {
-        printf("\nMenu:\n");
+        printf("\nGymFitness:\n");
         printf("1. Adicionar Aluno\n");
         printf("2. Buscar Aluno por ID\n");
         printf("3. Exibir Todos os Alunos\n");

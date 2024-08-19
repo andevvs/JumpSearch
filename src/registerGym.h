@@ -1,4 +1,4 @@
-#define MAXALUNO 100 // constante para definir o tamanho maximo do array de alunos
+   #define MAXALUNO 100 // constante para definir o tamanho maximo do array de alunos
 
 // struct para armazenar informações do aluno
 typedef struct {

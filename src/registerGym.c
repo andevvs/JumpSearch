@@ -38,3 +38,14 @@ int jumpSearch(Aluno alunos[], int numeroAlunos, int id) {
 void exibirAluno(Aluno aluno) {
     printf("ID: %d\nNome: %s\n", aluno.id, aluno.nome);
 }
+
+void exibirTodosAlunos(Aluno alunos[], int numeroAlunos) {
+    if (numeroAlunos == 0) {
+        printf("Nenhum aluno cadastrado.\n");
+        return;
+    }
+    for (int i = 0; i < numeroAlunos; i++) {
+        printf("%d. ", i + 1);
+        exibirAluno(alunos[i]);
+    }
+}

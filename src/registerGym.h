@@ -14,3 +14,6 @@ int jumpSearch(Aluno alunos[], int numeroAlunos, int id);
 
 // função pra exibir apenas um aluno
 void exibirAluno(Aluno aluno);
+
+// função para exibir todos os alunos que foram cadastrados
+void exibirTodosAlunos(Aluno alunos[], int numeroAlunos);

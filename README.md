@@ -7,7 +7,7 @@
     <a href="#about">Sobre o Algoritmo</a> •
     <a href="#complexity">Complexidade</a> •
     <a href="#config">Configs de Teste</a> •
-    <a href="#colab">Cotribuidores</a> •
+    <a href="#colab">Cotribuidores</a> 
 </p>
 
 <div>

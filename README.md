@@ -1,7 +1,7 @@
 <div>
 <img align="right" width="110" height="170" src="https://assecom.ufersa.edu.br/wp-content/uploads/sites/24/2014/09/PNG-bras%C3%A3o-Ufersa.png">
 <br>
-<h1 align="center" style="font-weight: bold;">Busca por Pulo (Jump Search) 💻</h1>
+<h1 align="center" style="font-weight: bold;">Busca por Pulo (Jump Search) 🐇</h1>
 <p align="center">
     <a href="#tech">Tecnologias</a> •
     <a href="#about">Sobre o Algoritmo</a> •

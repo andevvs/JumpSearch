@@ -13,7 +13,7 @@ int main() {
         printf("2. Buscar Aluno por ID\n");
         printf("3. Exibir Todos os Alunos\n");
         printf("4. Sair\n");
-        printf("Escolha uma opção: ");
+        printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
 
         switch (opcao) {

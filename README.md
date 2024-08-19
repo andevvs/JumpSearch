@@ -19,9 +19,9 @@
 O Jump Search é um algoritmo de busca utilizado em arrays ou listas ordenadas. Ele opera saltando blocos de elementos em vez de percorrer cada elemento individualmente.
 ## Como Funciona
 
--Salto Inicial: O algoritmo começa verificando elementos em saltos fixos de tamanho √n (onde n é o número de elementos na lista). Isso significa que ele pula de um elemento a outro, em vez de examinar cada um sequencialmente.
+-Salto Inicial: O algoritmo começa verificando elementos em saltos fixos de tamanho √n (onde n é o número de elementos na lista). Isso significa que ele pula de um elemento a outro, em vez de examinar um de cada vez.
 
--Busca Linear: Quando o algoritmo encontra um intervalo onde o elemento procurado pode estar (ou seja, onde o elemento no final do salto é maior ou igual ao valor procurado), ele realiza uma busca linear dentro desse intervalo para encontrar o elemento exato.
+-Busca Linear: Quando o algoritmo acha um intervalo onde o elemento procurado pode estar (ou seja, onde o elemento no final do salto é maior ou igual ao valor procurado), ele realiza uma busca linear dentro desse intervalo para encontrar o elemento exato.
 
 -Eficiência: O Jump Search é mais eficiente do que a busca linear para listas grandes, pois reduz o número de comparações necessárias ao limitar a busca linear a blocos menores.
 

@@ -34,7 +34,6 @@ int main() {
                 if (indice != -1) {
                     printf(VERDE"\nAluno encontrado:\n"PADRAO);
                     exibirAluno(alunos[indice]);
-                    printf("Posicao no array: %d\n", indice); 
                 } else {
                     printf(VERMELHO"\nAluno com ID %d nao encontrado.\n"PADRAO, id );
                 }

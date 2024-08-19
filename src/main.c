@@ -8,7 +8,7 @@ int main() {
     int opcao;
 
     do {
-        printf("\nGymFitness:\n");
+        printf(CIANO"\n|GymFitness|:\n"PADRAO);
         printf("1. Adicionar Aluno\n");
         printf("2. Buscar Aluno por ID\n");
         printf("3. Exibir Todos os Alunos\n");
@@ -36,7 +36,7 @@ int main() {
                     printf("Aluno encontrado:\n");
                     exibirAluno(alunos[indice]);
                 } else {
-                    printf("Aluno com ID %d não encontrado.\n", id);
+                    printf("Aluno com ID %d nao encontrado.\n", id);
                 }
                 break;
             }

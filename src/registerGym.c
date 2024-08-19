@@ -5,7 +5,7 @@
 
 void adicionarAluno(Aluno alunos[], int* numeroAlunos, int id, char nome[]) {
     if (*numeroAlunos >= MAXALUNO) {
-        printf("\nNao eh possível adicionar mais alunos.\n");
+        printf("\nNao eh possivel adicionar mais alunos.\n");
         return;
     }
     alunos[*numeroAlunos].id = id;

@@ -11,7 +11,7 @@ void adicionarAluno(Aluno alunos[], int* numeroAlunos, int id, char nome[]) {
     alunos[*numeroAlunos].id = id;
     strcpy(alunos[*numeroAlunos].nome, nome);
     (*numeroAlunos)++;
-    printf("\nAluno adicionado com sucesso!\n");
+    printf(VERDE"\nAluno adicionado com sucesso!\n"PADRAO);
 }
 
 int jumpSearch(Aluno alunos[], int numeroAlunos, int id) {

@@ -9,11 +9,11 @@ int main() {
 
     do {
         printf(CIANO"\n|GymFitness|:\n"PADRAO);
-        printf("1. Adicionar Aluno\n");
+        printf(AMARELO"1. Adicionar Aluno\n");
         printf("2. Buscar Aluno por ID\n");
         printf("3. Exibir Todos os Alunos\n");
         printf("4. Sair\n");
-        printf("Escolha uma opcao: ");
+        printf("Escolha uma opcao: "PADRAO);
         scanf("%d", &opcao);
 
         switch (opcao) {
@@ -29,14 +29,14 @@ int main() {
             }
             case 2: {
                 int id;
-                printf("Digite o ID do aluno a ser buscado: ");
+                printf("\nDigite o ID do aluno a ser buscado: \n");
                 scanf("%d", &id);
                 int indice = jumpSearch(alunos, numeroAlunos, id);
                 if (indice != -1) {
-                    printf("Aluno encontrado:\n");
+                    printf(VERDE"\nAluno encontrado:\n"PADRAO);
                     exibirAluno(alunos[indice]);
                 } else {
-                    printf("Aluno com ID %d nao encontrado.\n", id);
+                    printf(VERMELHO"\nAluno com ID %d nao encontrado.\n"PADRAO, id );
                 }
                 break;
             }

@@ -24,7 +24,7 @@ void adicionarAluno(Aluno *alunos, int* numeroAlunos, int id, char nome[]);
 int jumpSearch(Aluno *alunos, int numeroAlunos, int id);
 
 // função pra exibir apenas um aluno
-void exibirAluno(Aluno aluno);
+void exibirAluno(Aluno *aluno, int indice);
 
 // função para exibir todos os alunos que foram cadastrados
 void exibirTodosAlunos(Aluno *alunos, int numeroAlunos);
@@ -34,3 +34,6 @@ void carregarAlunosDoArquivo(Aluno *alunos, int *numeroAlunos, const char *nomeA
 
 //função para salvar o tempo de execução em um arquivo
 void salvarTempoExecucao(const char *nomeArquivo, double tempo);
+
+//função para alocar dinamicamente
+Aluno *alocacao();

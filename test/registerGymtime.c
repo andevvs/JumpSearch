@@ -4,19 +4,28 @@ struct aluno{
     char nome[50];
 };
 
+Aluno *alocacao(){
+    Aluno *aluno = (Aluno *) malloc(sizeof(Aluno) * MAXALUNO);
+    if (aluno == NULL){
+        printf("Erro\n");
+        return 1;
+    }
+    return aluno;
+}
+
 void adicionarAluno(Aluno *alunos, int *numeroAlunos, int id, char nome[]) {
     alunos[*numeroAlunos].id = id;
     strcpy(alunos[*numeroAlunos].nome, nome);
     (*numeroAlunos)++;
 }
 
-void exibirAluno(Aluno aluno) {
-    printf("ID: %d, Nome: %s\n", aluno.id, aluno.nome);
+void exibirAluno(Aluno *aluno, int indice) {
+    printf("ID: %d, Nome: %s\n", aluno[indice].id, aluno[indice].nome);
 }
 
 void exibirTodosAlunos(Aluno *alunos, int numeroAlunos) {
     for (int i = 0; i < numeroAlunos; i++) {
-        exibirAluno(alunos[i]);
+        exibirAluno(alunos ,i);
     }
 }
 

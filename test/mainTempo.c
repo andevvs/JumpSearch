@@ -5,13 +5,13 @@
 
 
 int main() {
-    Aluno *alunos = (Aluno*)malloc(sizeof(Aluno)*MAXALUNO);
+    Aluno *alunos = alocacao();
     int numeroAlunos = 0;
     int opcao;
 
     
     // carrega os alunos do arquivo "alunos.txt"
-    carregarAlunosDoArquivo(alunos, &numeroAlunos, "alunos.txt");
+    carregarAlunosDoArquivo(alunos, &numeroAlunos, "../docs/aluno.txt");
 
     do {
         printf(CIANO"\n|GymFitness|:\n"PADRAO);
@@ -47,7 +47,7 @@ int main() {
 
                 if (indice != -1) {
                     printf(VERDE"\nAluno encontrado:\n"PADRAO);
-                    exibirAluno(alunos[indice]);
+                    exibirAluno(alunos, indice);
                 } else {
                     printf(VERMELHO"\nAluno com ID %d nao encontrado.\n"PADRAO, id );
                 }

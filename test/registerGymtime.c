@@ -8,7 +8,7 @@ Aluno *alocacao(){
     Aluno *aluno = (Aluno *) malloc(sizeof(Aluno) * MAXALUNO);
     if (aluno == NULL){
         printf("Erro\n");
-        return 1;
+        exit(1);
     }
     return aluno;
 }

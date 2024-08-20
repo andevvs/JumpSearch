@@ -1,51 +1,78 @@
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 #include <math.h>
-#include "registerGymtime.h"
+#include <string.h>
+#include <time.h>
+#include <registerGymtime.h>
 
-void adicionarAluno(Aluno alunos[], int* numeroAlunos, int id, char nome[]) {
-    if (*numeroAlunos >= MAXALUNO) {
-        printf("\nNao eh possível adicionar mais alunos.\n");
-        return;
-    }
+#define MAXALUNO 100000
+
+typedef struct {
+    int id;
+    char nome[50];
+} Aluno;
+
+void adicionarAluno(Aluno alunos[], int *numeroAlunos, int id, char nome[]) {
     alunos[*numeroAlunos].id = id;
     strcpy(alunos[*numeroAlunos].nome, nome);
     (*numeroAlunos)++;
-    printf(VERDE"\nAluno adicionado com sucesso!\n"PADRAO);
-}
-
-int jumpSearch(Aluno alunos[], int numeroAlunos, int id) {
-    int tamanhoBloco = (int)sqrt(numeroAlunos); 
-    int inicioBlocoAnterior = 0;
-
-    // ira encontrar o bloco onde o elemento possa estar presente
-    while (alunos[(tamanhoBloco < numeroAlunos ? tamanhoBloco : numeroAlunos) - 1].id < id) {
-        inicioBlocoAnterior = tamanhoBloco;
-        tamanhoBloco += (int)sqrt(numeroAlunos); 
-        if (inicioBlocoAnterior >= numeroAlunos)
-            return -1; // se inicioBlocoAnterior ultrapassar o número de alunos, o ID nao estara presente
-    }
-
-    // realiza a busca linear dentro do bloco
-    for (int i = inicioBlocoAnterior; i < (tamanhoBloco < numeroAlunos ? tamanhoBloco : numeroAlunos); i++) {
-        if (alunos[i].id == id)
-            return i; // ID encontrado
-    }
-
-    return -1; // Elemento não encontrado
 }
 
 void exibirAluno(Aluno aluno) {
-    printf("\nID: %d\nNome: %s\n", aluno.id, aluno.nome);
+    printf("ID: %d, Nome: %s\n", aluno.id, aluno.nome);
 }
 
 void exibirTodosAlunos(Aluno alunos[], int numeroAlunos) {
-    if (numeroAlunos == 0) {
-        printf("\nNenhum aluno cadastrado.\n");
-        return;
-    }
     for (int i = 0; i < numeroAlunos; i++) {
-        printf("\n%d. ", i + 1);
         exibirAluno(alunos[i]);
     }
+}
+
+int jumpSearch(Aluno alunos[], int numeroAlunos, int idProcurado) {
+    int pulo = sqrt(numeroAlunos);
+    int blocoInicial = 0;
+    int blocoFinal = pulo;
+
+    while (alunos[blocoFinal - 1].id < idProcurado && blocoFinal < numeroAlunos) {
+        blocoInicial = blocoFinal;
+        blocoFinal += pulo;
+        if (blocoFinal > numeroAlunos) {
+            blocoFinal = numeroAlunos;
+        }
+    }
+
+    for (int i = blocoInicial; i < blocoFinal; i++) {
+        if (alunos[i].id == idProcurado) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+void carregarAlunosDoArquivo(Aluno alunos[], int *numeroAlunos, const char *nomeArquivo) {
+    FILE *arquivo = fopen(nomeArquivo, "r");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo %s.\n", nomeArquivo);
+        return;
+    }
+
+    int id;
+    char nome[50];
+    while (fscanf(arquivo, "%d %49[^\n]", &id, nome) != EOF) {
+        adicionarAluno(alunos, numeroAlunos, id, nome);
+    }
+
+    fclose(arquivo);
+}
+
+void salvarTempoExecucao(const char *nomeArquivo, double tempo) {
+    FILE *arquivo = fopen(nomeArquivo, "a");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo %s para salvar o tempo de execução.\n", nomeArquivo);
+        return;
+    }
+
+    fprintf(arquivo, "Tempo de execução: %.6f segundos\n", tempo);
+    fclose(arquivo);
 }

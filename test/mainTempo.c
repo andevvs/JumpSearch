@@ -1,11 +1,14 @@
 #include <stdio.h>
-#include <time.h>
 #include "registerGymtime.c"
+
 
 int main() {
     Aluno alunos[MAXALUNO];
     int numeroAlunos = 0;
     int opcao;
+
+    // carrega os alunos do arquivo "alunos.txt"
+    carregarAlunosDoArquivo(alunos, &numeroAlunos, "alunos.txt");
 
     do {
         printf(CIANO"\n|GymFitness|:\n"PADRAO);
@@ -32,11 +35,12 @@ int main() {
                 printf("\nDigite o ID do aluno a ser buscado: \n");
                 scanf("%d", &id);
 
-                // medir o tempo de execução usando a biblioteca time.h
-                clock_t inicio = clock();
+                clock_t inicio = clock();  // medir o tempo de execução utilizando a biblioteca time.h
                 int indice = jumpSearch(alunos, numeroAlunos, id);
-                clock_t fim = clock();
-                double tempo_execucao = (double)(fim - inicio) / CLOCKS_PER_SEC;
+                clock_t fim = clock();  
+
+                double tempoExecucao = (double)(fim - inicio) / CLOCKS_PER_SEC;
+                salvarTempoExecucao("tempo_execucao.txt", tempoExecucao);
 
                 if (indice != -1) {
                     printf(VERDE"\nAluno encontrado:\n"PADRAO);
@@ -44,9 +48,7 @@ int main() {
                 } else {
                     printf(VERMELHO"\nAluno com ID %d nao encontrado.\n"PADRAO, id );
                 }
-
-                // tempo de execução
-                printf(AMARELO"\nTempo de execucao: %.6f segundos\n"PADRAO, tempo_execucao);
+                printf("Tempo de execução do Jump Search: %.6f segundos\n", tempoExecucao); // mostrando quanto tempo demorou
                 break;
             }
             case 3: {
@@ -57,7 +59,7 @@ int main() {
                 printf("Saindo...\n");
                 break;
             default:
-                printf("Opcao invalida. Tente novamente.\n");
+                printf("Opção inválida. Tente novamente.\n");
         }
     } while (opcao != 4);
 

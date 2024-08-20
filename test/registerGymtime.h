@@ -25,3 +25,9 @@ void exibirAluno(Aluno aluno);
 
 // função para exibir todos os alunos que foram cadastrados
 void exibirTodosAlunos(Aluno alunos[], int numeroAlunos);
+
+//função para carregar alunos a partir de um arquivo
+void carregarAlunosDoArquivo(Aluno alunos[], int *numeroAlunos, const char *nomeArquivo);
+
+//função para salvar o tempo de execução em um arquivo
+void salvarTempoExecucao(const char *nomeArquivo, double tempo);

@@ -1,18 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <string.h>
-#include <time.h>
-#include <registerGymtime.h>
-
-#define MAXALUNO 100000
-
-typedef struct {
+#include "registerGymtime.h"
+struct aluno{
     int id;
     char nome[50];
-} Aluno;
+};
 
-void adicionarAluno(Aluno alunos[], int *numeroAlunos, int id, char nome[]) {
+void adicionarAluno(Aluno *alunos, int *numeroAlunos, int id, char nome[]) {
     alunos[*numeroAlunos].id = id;
     strcpy(alunos[*numeroAlunos].nome, nome);
     (*numeroAlunos)++;
@@ -22,13 +14,13 @@ void exibirAluno(Aluno aluno) {
     printf("ID: %d, Nome: %s\n", aluno.id, aluno.nome);
 }
 
-void exibirTodosAlunos(Aluno alunos[], int numeroAlunos) {
+void exibirTodosAlunos(Aluno *alunos, int numeroAlunos) {
     for (int i = 0; i < numeroAlunos; i++) {
         exibirAluno(alunos[i]);
     }
 }
 
-int jumpSearch(Aluno alunos[], int numeroAlunos, int idProcurado) {
+int jumpSearch(Aluno *alunos, int numeroAlunos, int idProcurado) {
     int pulo = sqrt(numeroAlunos);
     int blocoInicial = 0;
     int blocoFinal = pulo;
@@ -50,7 +42,7 @@ int jumpSearch(Aluno alunos[], int numeroAlunos, int idProcurado) {
     return -1;
 }
 
-void carregarAlunosDoArquivo(Aluno alunos[], int *numeroAlunos, const char *nomeArquivo) {
+void carregarAlunosDoArquivo(Aluno *alunos, int *numeroAlunos, const char *nomeArquivo) {
     FILE *arquivo = fopen(nomeArquivo, "r");
     if (arquivo == NULL) {
         printf("Erro ao abrir o arquivo %s.\n", nomeArquivo);

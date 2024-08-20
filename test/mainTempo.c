@@ -1,12 +1,15 @@
+#include "registerGymtime.h"
 #include <stdio.h>
-#include "registerGymtime.c"
+#include <time.h>
+
 
 
 int main() {
-    Aluno alunos[MAXALUNO];
+    Aluno *alunos = (Aluno*)malloc(sizeof(Aluno)*MAXALUNO);
     int numeroAlunos = 0;
     int opcao;
 
+    
     // carrega os alunos do arquivo "alunos.txt"
     carregarAlunosDoArquivo(alunos, &numeroAlunos, "alunos.txt");
 

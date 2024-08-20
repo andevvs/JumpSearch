@@ -14,7 +14,7 @@ int main() {
     carregarAlunosDoArquivo(alunos, &numeroAlunos, "../docs/aluno.txt");
 
     do {
-        printf(CIANO"\n|GymFitness|:\n"PADRAO);
+        printf(CIANO"\n|AcademiaElite|:\n"PADRAO);
         printf(AMARELO"1. Adicionar Aluno\n");
         printf("2. Buscar Aluno por ID\n");
         printf("3. Exibir Todos os Alunos\n");
@@ -62,7 +62,7 @@ int main() {
                 printf("Saindo...\n");
                 break;
             default:
-                printf("Opção inválida. Tente novamente.\n");
+                printf("Opcao invalida. Tente novamente.\n");
         }
     } while (opcao != 4);
 

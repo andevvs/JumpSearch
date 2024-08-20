@@ -11,7 +11,7 @@ int main() {
 
     
     // carrega os alunos do arquivo "alunos.txt"
-    carregarAlunosDoArquivo(alunos, &numeroAlunos, "../docs/aluno.txt");
+    carregarAlunosDoArquivo(alunos, &numeroAlunos, "../docs/alunos.txt");
 
     do {
         printf(CIANO"\n|AcademiaElite|:\n"PADRAO);
@@ -51,7 +51,7 @@ int main() {
                 } else {
                     printf(VERMELHO"\nAluno com ID %d nao encontrado.\n"PADRAO, id );
                 }
-                printf("Tempo de execução do Jump Search: %.6f segundos\n", tempoExecucao); // mostrando quanto tempo demorou
+                printf("Tempo de execucao do Jump Search: %.6f segundos\n", tempoExecucao); // mostrando quanto tempo demorou
                 break;
             }
             case 3: {

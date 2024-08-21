@@ -12,7 +12,7 @@
 #define MAGENTA   "\033[35m"      
 #define CIANO     "\033[36m"      
 #define BRANCO    "\033[37m"      
-#define MAXALUNO 500000 // constante para definir o tamanho maximo do array de alunos
+#define MAXALUNO 100000 // constante para definir o tamanho maximo do array de alunos
 
 // struct para armazenar informações do aluno
 typedef struct aluno Aluno;

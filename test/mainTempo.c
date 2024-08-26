@@ -11,7 +11,7 @@ int main() {
 
     
     // carrega os alunos do arquivo "alunos.txt"
-    carregarAlunosDoArquivo(alunos, &numeroAlunos, "../docs/alunos.txt");
+    carregarAlunosDoArquivo(alunos, &numeroAlunos, "../docs/alunos500000.txt");
 
     do {
         printf(CIANO"\n|AcademiaElite|:\n"PADRAO);
